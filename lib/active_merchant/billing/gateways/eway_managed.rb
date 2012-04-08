@@ -187,6 +187,7 @@ private
         reply={}
         reply[:message]=REXML::XPath.first(node, '//ewayTrxnError').text
         reply[:success]=(REXML::XPath.first(node, '//ewayTrxnStatus').text == 'True')
+        reply[:return_amount]=REXML::XPath.first(node, '//ewayReturnAmount').text
         reply[:auth_code]=REXML::XPath.first(node, '//ewayAuthCode').text
         reply[:transaction_number]=REXML::XPath.first(node, '//ewayTrxnNumber').text        
         reply
